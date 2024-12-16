@@ -1,0 +1,100 @@
+2024-12-17 02:31:02.937 - DBeaver 24.3.0.202412011650 is starting
+2024-12-17 02:31:02.938 - OS: Windows 10 10.0 (amd64)
+2024-12-17 02:31:02.939 - Java version: 17.0.6 by Eclipse Adoptium (64bit)
+2024-12-17 02:31:02.940 - Install path: 'D:\web_0900_sds\dbms\resource\dbeaver-ce-24.3.0-win32.win32.x86_64\dbeaver'
+2024-12-17 02:31:02.940 - Instance path: 'file:/D:/web_0900_sds/dbms/workspace/'
+2024-12-17 02:31:02.942 - Memory available 127Mb/1024Mb
+2024-12-17 02:31:02.943 - Platform not initialized: metadata folder may be not set
+2024-12-17 02:31:02.946 - Create display
+2024-12-17 02:31:03.136 - Initialize desktop platform...
+2024-12-17 02:31:03.254 - BounceCastle bundle found. Use JCE provider BC
+> Start Core File Systems [org.eclipse.core.filesystem 1.11.0.v20240824-0952]
+> Start Core Resource Management [org.eclipse.core.resources 3.21.0.v20240805-1607]
+> Start Team Support Core [org.eclipse.team.core 3.10.500.v20240621-0541]
+> Start DBeaver UI Navigator [org.jkiss.dbeaver.ui.navigator 1.0.144.202412011650]
+2024-12-17 02:31:03.424 - 
+2024-12-17 02:31:03.425 - 	Refreshing workspace.
+2024-12-17 02:31:03.427 - Refreshing workspace contents
+2024-12-17 02:31:03.520 - Initialize base platform...
+> Start DBeaver UI Editors - Base [org.jkiss.dbeaver.ui.editors.base 1.0.144.202412011650]
+2024-12-17 02:31:03.548 - Platform initialized (412ms)
+2024-12-17 02:31:03.623 - Starting instance server at http://localhost:52948
+2024-12-17 02:31:03.632 - Run workbench
+> Start Eclipse e4 Workbench SWT [org.eclipse.e4.ui.workbench.swt 0.17.500.v20240807-0911]
+> Start Eclipse Application Services [org.eclipse.e4.core.services 2.4.400.v20240413-1529]
+> Start Eclipse UI Application Services [org.eclipse.e4.ui.services 1.6.300.v20231201-1637]
+> Start Eclipse e4 Progress View [org.eclipse.e4.ui.progress 0.4.600.v20240606-1020]
+> Start Eclipse Bindings Support [org.eclipse.e4.ui.bindings 0.14.400.v20240321-1245]
+> Start Eclipse e4 core commands [org.eclipse.e4.core.commands 1.1.400.v20240424-0444]
+> Start EMF XML/XMI Persistence [org.eclipse.emf.ecore.xmi 2.38.0.v20240721-0634]
+> Start Eclipse CSS SWT Theme Support [org.eclipse.e4.ui.css.swt.theme 0.14.400.v20240424-0956]
+> Start Eclipse e4 Workbench Add-ons [org.eclipse.e4.ui.workbench.addons.swt 1.5.500.v20240620-1945]
+> Start Eclipse e4 Workbench SWT Renderer [org.eclipse.e4.ui.workbench.renderers.swt 0.16.500.v20240727-1037]
+> Start Eclipse Dependency Injection Extensions [org.eclipse.e4.core.di.extensions 0.18.300.v20240413-1529]
+> Start Eclipse CSS SWT Support [org.eclipse.e4.ui.css.swt 0.15.400.v20240321-1245]
+> Start Eclipse SDK Themes [org.eclipse.ui.themes 1.2.2500.v20240819-1245]
+> Start Default Text Editor [org.eclipse.ui.editors 3.18.0.v20240807-0735]
+> Start Text Editor Framework [org.eclipse.ui.workbench.texteditor 3.18.0.v20240819-1419]
+2024-12-17 02:31:04.968 - Configure workbench window
+> Start DBeaver SQL Model [org.jkiss.dbeaver.model.sql 1.0.134.202412011650]
+2024-12-17 02:31:05.078 - Script dialect 'gbase8s' not found in registry (for data source provider gbase8s). Use default.
+2024-12-17 02:31:05.122 - Total database drivers: 121 (121)
+> Start Help System Core [org.eclipse.help 3.10.400.v20240415-0528]
+2024-12-17 02:31:05.240 - Create actions
+2024-12-17 02:31:05.254 - Disable Eclipse action set 'org.eclipse.ui.edit.text.actionSet.annotationNavigation'
+2024-12-17 02:31:05.255 - Disable Eclipse action set 'org.eclipse.ui.WorkingSetActionSet'
+2024-12-17 02:31:05.256 - Disable Eclipse action set 'org.eclipse.ui.actionSet.openFiles'
+2024-12-17 02:31:05.256 - Create workbench actions
+2024-12-17 02:31:07.249 - Initialize workbench window
+2024-12-17 02:31:07.253 - Finish initialization
+> Start DBeaver UI Editors - Data [org.jkiss.dbeaver.ui.editors.data 1.0.144.202412011650]
+> Start Internet Connection Management UI [org.eclipse.ui.net 1.5.400.v20240413-1529]
+> Start Internet Connection Management [org.eclipse.core.net 1.5.500.v20240625-1706]
+Warning: NLS unused message: actions_navigator__objects in: org.jkiss.dbeaver.ui.editors.sql.internal.SQLEditorMessages
+> Start DBeaver UI Editors - SQL [org.jkiss.dbeaver.ui.editors.sql 1.0.144.202412011650]
+> Start GEF Classic Draw2d [org.eclipse.draw2d 3.17.0.202409021815]
+> Start GEF Classic GEF (MVC) [org.eclipse.gef 3.19.0.202409021815]
+> Start DBeaver ERD UI [org.jkiss.dbeaver.erd.ui 3.0.104.202412011650]
+> Start DBeaver ERD Model [org.jkiss.dbeaver.erd.model 1.0.104.202412011650]
+> Start DBeaver Dashboard UI [org.jkiss.dbeaver.ui.dashboard 1.0.141.202412011650]
+> Start DBeaver Sample Database [org.jkiss.dbeaver.ext.sample.database 1.0.181.202412011650]
+> Start DBeaver Tip of the day [org.jkiss.dbeaver.ext.ui.tipoftheday 1.0.150.202412011650]
+2024-12-17 02:31:10.480 - Open [https://dbeaver.io/product/version.xml]
+> Start DBeaver UI Editors - Connections [org.jkiss.dbeaver.ui.editors.connection 1.0.135.202412011650]
+> Start DBeaver Oracle UI [org.jkiss.dbeaver.ext.oracle.ui 1.0.131.202412011650]
+> Start DBeaver Oracle Model [org.jkiss.dbeaver.ext.oracle 2.1.229.202412011650]
+> Start DBeaver JDBC Model [org.jkiss.dbeaver.model.jdbc 1.0.37.202412011650]
+2024-12-17 02:32:04.890 - Auth model 'native' was replaced by 'oracle_native'
+2024-12-17 02:32:04.927 - Service 'org.jkiss.dbeaver.runtime.ui.UIServiceSecurity' not found
+2024-12-17 02:32:20.717 - Open [https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc11/23.2.0.0/ojdbc11-23.2.0.0.pom]
+2024-12-17 02:32:21.310 - Open [https://repo1.maven.org/maven2/com/oracle/database/nls/orai18n/23.2.0.0/orai18n-23.2.0.0.pom]
+2024-12-17 02:32:21.462 - Open [https://repo1.maven.org/maven2/com/oracle/database/xml/xdb6/18.3.0.0/xdb6-18.3.0.0.pom]
+2024-12-17 02:32:21.628 - Open [https://repo1.maven.org/maven2/com/oracle/database/xml/xmlparserv2/18.3.0.0/xmlparserv2-18.3.0.0.pom]
+2024-12-17 02:32:21.785 - Open [https://repo1.maven.org/maven2/com/oracle/database/xml/xmlparserv2/23.2.0.0/xmlparserv2-23.2.0.0.pom]
+2024-12-17 02:33:21.102 - Connect with 'jdbc:oracle:thin:@//localhost:1521/XE' (oracle_thin-193d0872ea1-689c677a286de923)
+2024-12-17 02:33:21.136 - Execution context opened (jdbc:oracle:thin:@//localhost:1521/XE; Main; 0)
+2024-12-17 02:33:21.529 - Connected (oracle_thin-193d0872ea1-689c677a286de923, Oracle JDBC driver [11.2.0.2.0])
+2024-12-17 02:33:21.544 - Execution context closed (jdbc:oracle:thin:@//localhost:1521/XE, 0)
+2024-12-17 02:33:21.545 - Disconnected (oracle_thin-193d0872ea1-689c677a286de923)
+> Start DBeaver SQL Terminal [org.jkiss.dbeaver.ui.editors.sql.terminal 1.0.120.202412011650]
+> Start Core Compare Support [org.eclipse.compare.core 3.8.500.v20240524-2010]
+> Start Console [org.eclipse.ui.console 3.14.100.v20240429-1358]
+> Start Debug Core [org.eclipse.debug.core 3.21.500.v20240801-2219]
+> Start DBeaver Tasks - Native Tools UI [org.jkiss.dbeaver.tasks.native.ui 1.0.122.202412011650]
+> Start DBeaver Tasks - General UI [org.jkiss.dbeaver.tasks.ui 1.0.122.202412011650]
+2024-12-17 02:33:33.209 - Connect with 'localhost' (oracle_thin-193d086f0ce-4593ab481ec1f565)
+2024-12-17 02:33:33.211 - Execution context opened (localhost; Main; 1)
+2024-12-17 02:33:33.247 - Execution context opened (localhost; Metadata; 2)
+2024-12-17 02:33:33.286 - Connected (oracle_thin-193d086f0ce-4593ab481ec1f565, Oracle JDBC driver [11.2.0.2.0])
+2024-12-17 02:33:33.288 - Execution context opened (localhost; SQLEditor <Script.sql>; 3)
+> Start DBeaver SQL Language Semantic Model [org.jkiss.dbeaver.model.lsm 1.0.39.202412011650]
+2024-12-17 02:34:53.022 - Execution context closed (localhost, 1)
+2024-12-17 02:34:53.033 - Execution context closed (localhost, 2)
+2024-12-17 02:34:53.044 - Execution context closed (localhost, 3)
+2024-12-17 02:34:53.044 - Disconnected (oracle_thin-193d086f0ce-4593ab481ec1f565)
+2024-12-17 02:35:29.847 - Some data source listeners are still registered: org.jkiss.dbeaver.model.navigator.DBNProjectDatabases:node://day01/datasources,org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer:org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer@18712a5b
+2024-12-17 02:36:58.199 - Dispose navigator model
+2024-12-17 02:36:58.248 - DBeaver is stopping
+2024-12-17 02:36:58.250 - Stop instance server
+2024-12-17 02:36:59.254 - Instance server has been stopped
+2024-12-17 02:36:59.255 - DBeaver shutdown completed

@@ -1,0 +1,13 @@
+!SESSION 2024-12-17 02:30:59.700 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -eclipse.keyring C:\Users\ehdtj\AppData\Roaming\DBeaverData\secure\secure_storage
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2024-12-17 02:31:07.430
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2024-12-17 02:35:29.848
+!MESSAGE Some data source listeners are still registered: org.jkiss.dbeaver.model.navigator.DBNProjectDatabases:node://day01/datasources,org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer:org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer@18712a5b
