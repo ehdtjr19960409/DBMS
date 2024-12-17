@@ -1,0 +1,215 @@
+-- 테이블 생성(DDL)
+CREATE TABLE TBL_MEMBER(
+	MEMBER_ID NUMBER,
+	MEMBER_NAME VARCHAR2(100),
+	MEMBER_AGE NUMBER(3)
+);
+
+SELECT
+	*
+FROM
+	TBL_MEMBER;
+-- 데이터 추가 INSERT
+INSERT
+	INTO
+	TBL_MEMBER
+VALUES(1,
+'김영선',
+20);
+
+INSERT
+	INTO
+	TBL_MEMBER
+VALUES(2,
+'신짱구',
+5);
+
+INSERT
+	INTO
+	TBL_MEMBER
+VALUES(3,
+'신짱아',
+2);
+
+INSERT
+	INTO
+	TBL_MEMBER(MEMBER_ID,
+	MEMBER_NAME)
+VALUES(4,
+'유리');
+
+INSERT
+	INTO
+	TBL_MEMBER(MEMBER_AGE)
+VALUES(5);
+-- 데이터 수정 UPDATE
+UPDATE
+	TBL_MEMBER
+SET
+	MEMBER_AGE = 5;
+
+SELECT
+	*
+FROM
+	TBL_MEMBER;
+
+UPDATE
+	TBL_MEMBER
+SET
+	MEMBER_AGE = 20
+WHERE
+	MEMBER_NAME = '김영선';
+
+UPDATE
+	TBL_MEMBER
+SET
+	MEMBER_AGE = 2
+WHERE
+	MEMBER_ID = 3;
+-- 삭제 : DELETE
+DELETE
+FROM
+	TBL_MEMBER
+WHERE
+	MEMBER_AGE = 5;
+
+DELETE
+FROM
+	TBL_MEMBER;
+
+SELECT
+	*
+FROM
+	TBL_MEMBER;
+
+-- 학생 테이블 생성
+--CREATE TABLE 테이블명 (
+--	컬럼명 데이터타입-문자(VARCHAR2, CHAR), 숫자(NUMBER), 날짜(DATE)
+--);
+
+CREATE TABLE TBL_STUDENT(
+	STUDENT_NUMBER NUMBER,
+	STUDENT_NAME VARCHAR2(1000),
+	STUDENT_MATH NUMBER,
+	STUDENT_ENG NUMBER,
+	STUDENT_KOR NUMBER,
+	STUDENT_GRADE VARCHAR2(100)
+);
+
+-- 테이블 삭제 :  DROP TABLE 테이블명;
+DROP TABLE TBL_SUTDENT;
+
+SELECT * FROM TBL_STUDENT;
+
+/* 학생 테이블에 데이터 추가
+ * 학생번호 이름 수학 영어 국어
+ * 1	김철수	90	90	90	
+ * 2	홍길동	70	25	55
+ * 3	이유리	89	91	77
+ * 4	김웅이	48	100	100
+ * 5	신짱구	50	10	NULL
+ * */
+
+INSERT INTO TBL_STUDENT
+VALUES(1, '김철수', 90, 90, 90, NULL);
+
+INSERT INTO TBL_STUDENT(STUDENT_NUMBER, STUDENT_NAME, STUDENT_MATH, STUDENT_ENG)
+--VALUES(2, '홍길동', 70, 25, 55);
+--VALUES(3, '이유리', 89, 91, 77);
+--VALUES(4, '김웅이', 48, 100, 100);
+VALUES(5, '신짱구', 50, 10);
+
+SELECT * FROM TBL_STUDENT;
+
+-- 전체 학생의 이름과 평균점수 조회하기(별칭도 추가)
+SELECT STUDENT_NAME 이름, (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR) / 3 "평균 점수"
+FROM TBL_STUDENT;
+
+SELECT * FROM TBL_STUDENT;
+
+-- NULL과 관련된 함수
+-- NVL(컬럼명, 기본값) : NULL값을 특정 값으로 변경
+-- NVL은 기존 타입의 값이 있기 때문에 타입을 변경하게 되면 하나의 컬럼에 타입이 2개가 되므로 오류가 발생한다
+SELECT STUDENT_NAME 이름, NVL(STUDENT_KOR, 0) 국어점수, NVL(STUDENT_GRADE, '미정') AS 학점
+FROM TBL_STUDENT;
+
+-- NVL2(컬럼명, 값1, 값2) : NULL 여부에 따라 NULL이 아니면 값1, NULL이면 값2
+-- 하나의 컬럼에는 하나의 타입의 값만 들어갈 수 있다. 따라서 NULL인 값과 NULL이 아닌 값이 모두 문자이므로 가능하다
+SELECT STUDENT_NAME 이름, NVL2(STUDENT_KOR, '점수있음', '점수없음') 국어점수
+FROM TBL_STUDENT;
+
+-- NULLIF(컬럼명, 값1) : 특정값과 같으면 NULL로 변경, 아니라면 원래 값을 유지
+SELECT STUDENT_NAME 이름, NULLIF(STUDENT_KOR, 100)
+FROM TBL_STUDENT;
+
+SELECT * FROM TBL_STUDENT;
+
+-- NULLIF(컬럼1, 컬럼2) : 두 컬럼의 값이 같으면 NULL로 변경, 값이 다르면 기존 값 출력
+SELECT STUDENT_NAME 이름, NULLIF(STUDENT_MATH, STUDENT_ENG)
+FROM TBL_STUDENT;
+
+-- COALESCE(값1, 값2, 값3) : NULL이 아닌 첫번째 값을 반환
+SELECT STUDENT_NAME 이름, COALESCE(STUDENT_KOR, STUDENT_ENG, STUDENT_MATH, 0) AS 첫번째점수
+FROM TBL_STUDENT;
+
+
+SELECT * FROM TBL_STUDENT;
+
+-- 수정 UPDATE
+--UPDATE 테이블명
+--SET 컬럼명 = 값
+--WHERE 행을 찾을 조건
+--NVL(STUDENT_KOR, 0)
+
+UPDATE TBL_STUDENT
+SET STUDENT_KOR = NVL(STUDENT_KOR, 0);
+
+SELECT * FROM TBL_STUDENT;
+
+-- 전체 학생의 이름과 평균점수 조회하기(별칭도 추가)
+SELECT STUDENT_NAME 이름, (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR) / 3 "평균 점수"
+FROM TBL_STUDENT;
+
+-- 학생의 평균점수를 구하고 학점 수정하기
+-- A : 90점이상
+-- B : 80점 이상 90점 미만
+-- C : 50점 이상 80점 미만
+-- F : 50점 미만
+
+-- ROUND(값, 자리수) : ROUND 함수는 소수점을 반올림하여 특정 소수점 까지만 표현할 수 있다
+-- ROUND(평균점수 구하는 공식 >= 90)
+
+UPDATE TBL_STUDENT 
+SET STUDENT_GRADE = 'A'
+WHERE (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR) / 3 >= 90;
+
+UPDATE TBL_STUDENT
+SET STUDENT_GRADE  = 'B'
+WHERE (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR) / 3 >= 80 AND 
+	(STUDENT_MATH + STUDENT_ENG + STUDENT_KOR) / 3 < 90;
+
+UPDATE TBL_STUDENT
+SET STUDENT_GRADE  = 'C'
+WHERE (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR ) / 3 >= 50
+AND (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR ) / 3 < 80;
+
+UPDATE TBL_STUDENT
+SET STUDENT_GRADE  = 'F'
+WHERE (STUDENT_MATH + STUDENT_ENG + STUDENT_KOR ) / 3 < 50;
+
+SELECT * FROM TBL_STUDENT;
+
+-- Q1. 학생의 수학, 영어, 국어 점수 중 한 과목이라도 50점 미만이 아니고
+-- 학점이 B이상인 학생만 학생번호, 이름, 학점으로 별칭 붙여서 출력하기
+
+-- Q2. 학생의 수학, 영어, 국어 점수 중 한 과목이라도 30점 미만이면 테이블에서 삭제하기
+
+
+
+
+
+
+
+
+
+
