@@ -1,0 +1,180 @@
+2024-12-17 23:30:26.843 - DBeaver 24.3.0.202412011650 is starting
+2024-12-17 23:30:26.844 - OS: Windows 10 10.0 (amd64)
+2024-12-17 23:30:26.844 - Java version: 17.0.6 by Eclipse Adoptium (64bit)
+2024-12-17 23:30:26.845 - Install path: 'D:\web_0900_sds\dbms_1\resource\dbeaver-ce-24.3.0-win32.win32.x86_64\dbeaver'
+2024-12-17 23:30:26.845 - Instance path: 'file:/D:/web_0900_sds/DBMS/workspace/'
+2024-12-17 23:30:26.847 - Memory available 64Mb/1024Mb
+2024-12-17 23:30:26.847 - Platform not initialized: metadata folder may be not set
+2024-12-17 23:30:26.861 - Create display
+2024-12-17 23:30:27.089 - Initialize desktop platform...
+2024-12-17 23:30:27.254 - BounceCastle bundle found. Use JCE provider BC
+> Start Core File Systems [org.eclipse.core.filesystem 1.11.0.v20240824-0952]
+> Start Core Resource Management [org.eclipse.core.resources 3.21.0.v20240805-1607]
+> Start Team Support Core [org.eclipse.team.core 3.10.500.v20240621-0541]
+> Start DBeaver UI Navigator [org.jkiss.dbeaver.ui.navigator 1.0.144.202412011650]
+2024-12-17 23:30:27.667 - Initialize base platform...
+> Start DBeaver UI Editors - Base [org.jkiss.dbeaver.ui.editors.base 1.0.144.202412011650]
+2024-12-17 23:30:27.719 - Platform initialized (629ms)
+2024-12-17 23:30:27.786 - Starting instance server at http://localhost:50822
+2024-12-17 23:30:27.806 - Run workbench
+> Start Eclipse e4 Workbench SWT [org.eclipse.e4.ui.workbench.swt 0.17.500.v20240807-0911]
+> Start Eclipse Application Services [org.eclipse.e4.core.services 2.4.400.v20240413-1529]
+> Start Eclipse UI Application Services [org.eclipse.e4.ui.services 1.6.300.v20231201-1637]
+> Start Eclipse e4 Progress View [org.eclipse.e4.ui.progress 0.4.600.v20240606-1020]
+> Start Eclipse Bindings Support [org.eclipse.e4.ui.bindings 0.14.400.v20240321-1245]
+> Start Eclipse e4 core commands [org.eclipse.e4.core.commands 1.1.400.v20240424-0444]
+> Start EMF XML/XMI Persistence [org.eclipse.emf.ecore.xmi 2.38.0.v20240721-0634]
+> Start Eclipse CSS SWT Theme Support [org.eclipse.e4.ui.css.swt.theme 0.14.400.v20240424-0956]
+> Start Eclipse e4 Workbench Add-ons [org.eclipse.e4.ui.workbench.addons.swt 1.5.500.v20240620-1945]
+> Start Eclipse e4 Workbench SWT Renderer [org.eclipse.e4.ui.workbench.renderers.swt 0.16.500.v20240727-1037]
+> Start Eclipse Dependency Injection Extensions [org.eclipse.e4.core.di.extensions 0.18.300.v20240413-1529]
+> Start Eclipse CSS SWT Support [org.eclipse.e4.ui.css.swt 0.15.400.v20240321-1245]
+> Start Default Text Editor [org.eclipse.ui.editors 3.18.0.v20240807-0735]
+> Start Text Editor Framework [org.eclipse.ui.workbench.texteditor 3.18.0.v20240819-1419]
+2024-12-17 23:30:44.073 - Configure workbench window
+> Start DBeaver SQL Model [org.jkiss.dbeaver.model.sql 1.0.134.202412011650]
+2024-12-17 23:30:44.172 - Script dialect 'gbase8s' not found in registry (for data source provider gbase8s). Use default.
+2024-12-17 23:30:44.225 - Total database drivers: 121 (121)
+> Start Help System Core [org.eclipse.help 3.10.400.v20240415-0528]
+2024-12-17 23:30:44.302 - Create actions
+2024-12-17 23:30:44.308 - Disable Eclipse action set 'org.eclipse.ui.edit.text.actionSet.annotationNavigation'
+2024-12-17 23:30:44.309 - Disable Eclipse action set 'org.eclipse.ui.WorkingSetActionSet'
+2024-12-17 23:30:44.309 - Disable Eclipse action set 'org.eclipse.ui.actionSet.openFiles'
+2024-12-17 23:30:44.310 - Create workbench actions
+2024-12-17 23:30:44.941 - Initialize workbench window
+2024-12-17 23:30:44.947 - Finish initialization
+> Start DBeaver UI Editors - Data [org.jkiss.dbeaver.ui.editors.data 1.0.144.202412011650]
+Warning: NLS unused message: actions_navigator__objects in: org.jkiss.dbeaver.ui.editors.sql.internal.SQLEditorMessages
+> Start DBeaver UI Editors - SQL [org.jkiss.dbeaver.ui.editors.sql 1.0.144.202412011650]
+> Start DBeaver SQL Terminal [org.jkiss.dbeaver.ui.editors.sql.terminal 1.0.120.202412011650]
+> Start Core Compare Support [org.eclipse.compare.core 3.8.500.v20240524-2010]
+> Start Internet Connection Management UI [org.eclipse.ui.net 1.5.400.v20240413-1529]
+> Start Internet Connection Management [org.eclipse.core.net 1.5.500.v20240625-1706]
+> Start DBeaver Sample Database [org.jkiss.dbeaver.ext.sample.database 1.0.181.202412011650]
+> Start DBeaver Tip of the day [org.jkiss.dbeaver.ext.ui.tipoftheday 1.0.150.202412011650]
+> Start GEF Classic Draw2d [org.eclipse.draw2d 3.17.0.202409021815]
+> Start GEF Classic GEF (MVC) [org.eclipse.gef 3.19.0.202409021815]
+> Start DBeaver ERD UI [org.jkiss.dbeaver.erd.ui 3.0.104.202412011650]
+> Start DBeaver ERD Model [org.jkiss.dbeaver.erd.model 1.0.104.202412011650]
+> Start DBeaver Dashboard UI [org.jkiss.dbeaver.ui.dashboard 1.0.141.202412011650]
+> Start DBeaver UI Editors - Connections [org.jkiss.dbeaver.ui.editors.connection 1.0.135.202412011650]
+> Start DBeaver JDBC Model [org.jkiss.dbeaver.model.jdbc 1.0.37.202412011650]
+> Start DBeaver Oracle Model [org.jkiss.dbeaver.ext.oracle 2.1.229.202412011650]
+> Start Console [org.eclipse.ui.console 3.14.100.v20240429-1358]
+> Start Debug Core [org.eclipse.debug.core 3.21.500.v20240801-2219]
+> Start DBeaver SQL Language Semantic Model [org.jkiss.dbeaver.model.lsm 1.0.39.202412011650]
+> Start DBeaver Tasks - Native Tools UI [org.jkiss.dbeaver.tasks.native.ui 1.0.122.202412011650]
+> Start DBeaver Oracle UI [org.jkiss.dbeaver.ext.oracle.ui 1.0.131.202412011650]
+> Start DBeaver Tasks - General UI [org.jkiss.dbeaver.tasks.ui 1.0.122.202412011650]
+2024-12-17 23:30:49.560 - Connect with 'localhost' (oracle_thin-193d21bf228-756b4121deb1afa2)
+2024-12-17 23:30:49.597 - Execution context opened (localhost; Main; 0)
+2024-12-17 23:30:50.161 - Execution context opened (localhost; Metadata; 1)
+2024-12-17 23:30:50.265 - Connected (oracle_thin-193d21bf228-756b4121deb1afa2, Oracle JDBC driver [11.2.0.2.0])
+2024-12-17 23:30:50.267 - Execution context opened (localhost; SQLEditor <day02(연산자).sql>; 2)
+2024-12-17 23:31:00.114 - Execution context opened (localhost; SQLEditor <day02(DML).sql>; 3)
+2024-12-17 23:31:27.403 - SQL Error [942] [42000]: ORA-00942: table or view does not exist
+
+org.jkiss.dbeaver.model.sql.DBSQLException: SQL Error [942] [42000]: ORA-00942: table or view does not exist
+
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:130)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:631)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$2(SQLQueryJob.java:522)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:541)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:1016)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:4273)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:128)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:126)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:5166)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:193)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:848)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OracleStatement.executeInternal(OracleStatement.java:1890)
+	at oracle.jdbc.driver.OracleStatement.execute(OracleStatement.java:1855)
+	at oracle.jdbc.driver.OracleStatementWrapper.execute(OracleStatementWrapper.java:304)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:344)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:128)
+	... 12 more
+2024-12-17 23:31:27.608 - Error binding callable statement parameters from metadata: 지원되지 않는 기능입니다
+2024-12-17 23:31:27.608 - Error obtaining output parameters from metadata: 지원되지 않는 기능입니다
+2024-12-17 23:31:27.608 - Can't obtain procedure metadata nor jdbc metadata
+2024-12-17 23:31:29.148 - Error binding callable statement parameters from metadata: 지원되지 않는 기능입니다
+2024-12-17 23:31:29.149 - Error obtaining output parameters from metadata: 지원되지 않는 기능입니다
+2024-12-17 23:31:29.149 - Can't obtain procedure metadata nor jdbc metadata
+2024-12-17 23:31:29.288 - SQL Error [942] [42000]: ORA-00942: table or view does not exist
+
+
+Error position: line: 181 pos: 14
+org.jkiss.dbeaver.model.sql.DBSQLException: SQL Error [942] [42000]: ORA-00942: table or view does not exist
+
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:130)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:631)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$2(SQLQueryJob.java:522)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:541)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:1016)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:4273)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:128)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:126)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:5166)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:193)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:848)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OracleStatement.executeInternal(OracleStatement.java:1890)
+	at oracle.jdbc.driver.OracleStatement.execute(OracleStatement.java:1855)
+	at oracle.jdbc.driver.OracleStatementWrapper.execute(OracleStatementWrapper.java:304)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:344)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:128)
+	... 12 more
+> Start DBeaver Data Transfer [org.jkiss.dbeaver.data.transfer 2.0.128.202412011650]
+> Start JSch Core [org.eclipse.jsch.core 1.5.500.v20240626-2102]
+2024-12-17 23:35:00.555 - Execution context closed (localhost, 0)
+2024-12-17 23:35:00.567 - Execution context closed (localhost, 1)
+2024-12-17 23:35:00.583 - Execution context closed (localhost, 2)
+2024-12-17 23:35:00.594 - Execution context closed (localhost, 3)
+2024-12-17 23:35:00.594 - Disconnected (oracle_thin-193d21bf228-756b4121deb1afa2)
+2024-12-17 23:35:24.800 - Auth model 'native' was replaced by 'oracle_native'
+2024-12-17 23:35:24.836 - Service 'org.jkiss.dbeaver.runtime.ui.UIServiceSecurity' not found
+2024-12-17 23:35:40.162 - Connect with 'jdbc:oracle:thin:@//localhost:1521/XE' (oracle_thin-193d50bcae5-6583758dae1fb40f)
+2024-12-17 23:35:40.163 - Execution context opened (jdbc:oracle:thin:@//localhost:1521/XE; Main; 4)
+2024-12-17 23:35:40.202 - Connected (oracle_thin-193d50bcae5-6583758dae1fb40f, Oracle JDBC driver [11.2.0.2.0])
+2024-12-17 23:35:40.214 - Execution context closed (jdbc:oracle:thin:@//localhost:1521/XE, 4)
+2024-12-17 23:35:40.214 - Disconnected (oracle_thin-193d50bcae5-6583758dae1fb40f)
+2024-12-17 23:35:52.314 - Service 'org.jkiss.dbeaver.runtime.ui.UIServiceSecurity' not found
+2024-12-17 23:36:11.845 - Connect with 'localhost' (oracle_thin-193d21bf228-756b4121deb1afa2)
+2024-12-17 23:36:11.846 - Execution context opened (localhost; Main; 5)
+2024-12-17 23:36:11.875 - Execution context opened (localhost; Metadata; 6)
+2024-12-17 23:36:11.908 - Connected (oracle_thin-193d21bf228-756b4121deb1afa2, Oracle JDBC driver [11.2.0.2.0])
+2024-12-17 23:36:11.909 - Execution context opened (localhost; SQLEditor <day02(연산자).sql>; 7)
+2024-12-17 23:36:12.010 - Execution context opened (localhost; SQLEditor <day02(DML).sql>; 8)
+2024-12-18 00:58:20.383 - Execution context closed (localhost, 7)
+2024-12-18 00:58:20.456 - Execution context closed (localhost, 8)
+2024-12-18 00:58:25.466 - Dispose navigator model
+2024-12-18 00:58:25.505 - DBeaver is stopping
+2024-12-18 00:58:25.506 - Stop instance server
+2024-12-18 00:58:26.510 - Instance server has been stopped
+2024-12-18 00:58:26.510 - DBeaver shutdown completed

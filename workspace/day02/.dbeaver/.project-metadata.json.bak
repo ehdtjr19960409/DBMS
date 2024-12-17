@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script.sql":{"default-datasource":"oracle_thin-193d21bf228-756b4121deb1afa2"}}}
+{"resources":{"Scripts/day02(DML).sql":{"default-schema":"HR","default-datasource":"oracle_thin-193d21bf228-756b4121deb1afa2"},"Scripts/day02(select).sql":{"default-schema":"HR","default-datasource":"oracle_thin-193d21bf228-756b4121deb1afa2"},"Scripts/day02(연산자).sql":{"default-schema":"HR","default-datasource":"oracle_thin-193d21bf228-756b4121deb1afa2"}}}
