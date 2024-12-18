@@ -1,0 +1,216 @@
+과제
+1. 학생 정보와 성적을 관리하기 위해 다음과 같은 정보를 저장해야한다
+- 학생번호, 이름, 나이, 전화번호, 주소
+- 과목명, 강사명, 수업일자, 수업시간, 학생성적, 수업번호, 과목번호
+
+학생 정보 및 성적 관리 시스템
+
+- 학생 정보 관리 요구사항 :
+    - 학생번호, 이름, 나이, 전화번호, 주소 필요
+- 과목 정보 관리 요구사항 :
+    - 과목번호, 과목명, 강사명, 수업일자(개강일로 생각), 수업시간(오전 9시, 오후 19시 중 자유) 필요
+- 성적 정보 관리 요구사항 :
+    - 학생의 성적과 수업번호 저장 필요
+
+모델링, 정규화, 구현까지 진행 후 각 테이블에 5개씩 값 넣어서 조회까지 할 것!
+
+개념적 모델
+
+학생		과목		성적
+
+학생번호		과목번호		학생성적
+이름		과목명		수업번호
+나이		강사명
+전화번호		수업일자
+주소		수업시간
+
+논리적 모델
+
+학생			과목명			성적
+
+학생번호	PK  정수		과목번호 PK  정수		수업번호 PK  정수
+이름 N/N	    문자열	과목명	  문자열		학생성적	   정수
+나이	    정수		강사명	  문자열		과목번호	FK 정수
+전화번호	    문자열	수업일자    날짜
+주소	UK  문자열	수업시간    날짜
+			학생번호 FK
+물리적 모델
+
+학생	TBL_STUDENT
+STUDENT_NUMBER 		NUMBER 	PRIMARY KEY
+STUDENT_NAME 		VARCHAR2(10) NOT NULL
+STUDENT_AGE 		NUMBER
+STUDENT_PHONE 		VARCHAR2(15)
+STUDENT_ADDRESS		VARCHAR2(100)
+
+과목	TBL_OBJECT
+OBJECT_NUMBER 	NUMBER 	PRIMARY KEY
+OBJECT_NAME	VARCHAR2(10)
+OBJECT_TEACHER_NAME	VARCHAR2(10)
+OBJECT_DATE		DATE
+OBJECT_TIME		TO_DATE
+STUDENT_NUMBER		NUMBER	FOREIGN KEY
+
+성적	TBL_GRADE
+GRADE_NUMBER NUMBER PRIMARY KEY
+GRADE_STUDENT_GRADE	NUMBER
+OBJECT_NUMBER 		NUMBER FOREIGN KEY
+
+
+========================================		
+-> 정규화
+과목번호과 성적번호의 정규화 필요o
+
+1차정규화_학생 정보 및 성적 관리 시스템 pk
+==========================================
+과목번호(pk)	과목명	강사명   		수업번호(pk)  수업일자  수업시간  학생성적	
+			     
+2차정규화_수업테이블
+=========================================== 
+수업번호(pk)  수업일자  수업시간   학생성적    과목번호(FK)
+
+
+2차정규화_과목테이블
+=========================================== 
+과목번호(pk)	과목명	강사명
+
+3차정규화_과목테이블
+=========================================== 
+과목번호(pk)	과목명	강사명
+
+3차정규화_수업테이블
+=========================================== 
+수업번호(pk)  수업일자  수업시간    과목번호(FK)
+
+3차정규화_성적테이블
+=========================================		
+학생성적  수업번호(FK)
+
+2. 동물병원의 요구사항은 다음과 같다
+- 동물병원의 반려동물, 보호자의 정보를 저장하고 관리한다
+- 보호자는 번호, 이름, 주소, 핸드폰 번호, 이메일주소를 가진다
+- 반려동물은 번호, 이름, 성별, 나이, 종, 품종, 보호자 번호를 가진다
+- 모든 보호자는 중복이 없는 번호를 가진다
+- 보호자의 이름, 주소, 핸드폰 번호는 필수 정보이다
+- 모든 동물은 중복이 없는 번호를 가진다
+- 동물의 이름, 성별, 나이, 종, 보호자 번호는 필수 정보이다
+- 동물의 보호자 번호는 실제 존재하는 보호자 번호여야 한다   ?
+
+개념적 모델
+보호자			반려동물
+
+번호			번호		
+이름			이름
+주소			성별
+핸드폰번호			나이
+이메일주소			종
+			품종
+			보호자 번호
+
+
+논리적 모델
+보호자					반려동물
+
+번호	PK	정수			번호	PK	정수
+이름		문자열 N/N		이름		문자열		N/N	
+주소		문자열 N/N		성별		문자		N/N
+핸드폰번호		문자열 N/N		나이		정수		N/N
+이메일주소		문자열 			종		문자열		N/N
+					품종		문자열
+					보호자 번호	정수		N/N
+
+물리적 모델
+
+보호자	TBL_PERSON
+PERSON_NUMBER 	NUMBER 			PRIMARY KEY
+PERSON_NAME	VARCHAR2(10) NOT NULL
+PERSON_ADDRESS	VARCHAR2(30) NOT NULL
+PERSON_PHONE	VARCHAR2(15) NOT NULL
+PERSON_EMAIL	VARCHAR2(50) NOT NULL
+
+반려동물 TBL_ANIMAL
+ANIMAL_NUMBER	NUMBER 			PRIMARY KEY
+ANIMAL_NAME	VARCHAR2(10) NOT NULL
+ANIMAL_GENDER	CHAR(1) NOT NULL
+ANIMAL_AGE	NUMBER NOT NULL
+ANIMAL_KIND	VARCHAR2(10) NOT NULL
+ANIMAL_TYPE	VARCHAR2(10) 
+PERSON_NUMBER	NUMBER NOT NULL		FORIEGN KEY 
+
+
+모델링, 정규화, 구현까지 진행 후 각 테이블에 5개씩 값 넣어서 조회까지 할 것!
+
+========================================		
+-> 정규화
+품종과 종의 정규화 필요o
+
+1차정규화 반려동물
+======================================
+번호(PK) 이름 성별 나이 종 품종  보호자 번호(FK)
+
+
+2차정규화 반려동물_번호(종 포함)
+======================================
+번호(PK) 	종	보호자 번호(FK)
+
+
+2차정규화 반려동물_품종
+======================================
+품종(PK)       이름     성별       나이 
+
+
+3차정규화 반려동물_번호
+======================================
+번호(PK) 	보호자 번호(FK)
+
+3차정규화 반려동물_종
+======================================
+종(PK) 		번호(FK)
+
+3차정규화 반려동물_품종
+=========================================
+품종(PK)       이름     성별     나이    종(FK)
+
+--------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+3. 아래와 같은 테이블이 있을 때 3차 정규화까지 각 단계별로 테이블을 만들고 값을 삽입 후 조회 쿼리문 결과를 확인하세요.
+
+- 기본 테이블명은 아래와 같고 테이블 추가하면서 값 넣을 땐 테이블명 달라져도 됨
+
+
+-- 직원 테이블 생성 (1차 정규화를 적용하지 않은 형태로 유지)
+CREATE TABLE Employees (
+    EmployeeID NUMBER PRIMARY KEY,
+    Name VARCHAR2(50),
+    BirthDate DATE,
+    DepartmentInfo VARCHAR2(255),
+    Salary NUMBER
+);
+
+-- 데이터 삽입
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (1, '스티븐', TO_DATE('2010-12-31', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 300);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (2, '마리', TO_DATE('2011-10-01', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 250);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (3, '찰스', TO_DATE('2003-05-01', 'YYYY-MM-DD'), '사업부, 경기도...02345', 200);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (4, '마리아', TO_DATE('1995-08-15', 'YYYY-MM-DD'), '인사부, 서울시.. 01234', 280);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (5, '제임스', TO_DATE('1988-03-22', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 320);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (6, '안나', TO_DATE('2000-12-10', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 270);
