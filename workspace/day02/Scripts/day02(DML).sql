@@ -314,7 +314,6 @@ ORDER BY COMMISSION_PCT, SALARY DESC;
  * SELECT 절에서는 출력되게하는 어트리뷰트가 나오지만, 이와 상관없이 ORDER BY 다른 컬럼을 쓰게 된다면 적용 된다
  */
 
-
 --19번
 SELECT * FROM EMPLOYEES;
 
@@ -326,3 +325,9 @@ SELECT * FROM EMPLOYEES;
 
 SELECT HIRE_DATE + 365 "입사 1년 후"
 FROM EMPLOYEES;
+
+
+
+
+
+

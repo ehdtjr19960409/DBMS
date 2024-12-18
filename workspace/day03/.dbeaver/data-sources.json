@@ -1,0 +1,43 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-193d73cdfe3-4c34cc99e9abadb": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "localhost",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {"oracle_thin-193d73cdfe3-4c34cc99e9abadb":{"HR":{":TBL_USER":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202412181618\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-193d73cdfe3-4c34cc99e9abadb\"\u003e\u003centity id\u003d\"1\" name\u003d\"TBL_USER\" fq-name\u003d\"HR.TBL_USER\" order\u003d\"0\" color-bg\u003d\"255,128,64\" font\u003d\"Segoe UI:9:0\" x\u003d\"245\" y\u003d\"40\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"TBL_BOOK\" fq-name\u003d\"HR.TBL_BOOK\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"255\" y\u003d\"279\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_BOOK\" fq-name\u003d\"HR.TBL_BOOK.FK_BOOK\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"2\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}},":TBL_BOOK":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202412181618\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-193d73cdfe3-4c34cc99e9abadb\"\u003e\u003centity id\u003d\"1\" name\u003d\"TBL_BOOK\" fq-name\u003d\"HR.TBL_BOOK\" order\u003d\"0\" color-bg\u003d\"255,128,64\" font\u003d\"Segoe UI:9:0\" x\u003d\"258\" y\u003d\"272\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"TBL_USER\" fq-name\u003d\"HR.TBL_USER\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"251\" y\u003d\"43\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"TBL_TYPE\" fq-name\u003d\"HR.TBL_TYPE\" order\u003d\"2\" font\u003d\"Segoe UI:9:0\" x\u003d\"250\" y\u003d\"487\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_TYPE\" fq-name\u003d\"HR.TBL_TYPE.FK_TYPE\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"FK_BOOK\" fq-name\u003d\"HR.TBL_BOOK.FK_BOOK\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}},":TBL_TYPE":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202412181618\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-193d73cdfe3-4c34cc99e9abadb\"\u003e\u003centity id\u003d\"1\" name\u003d\"TBL_TYPE\" fq-name\u003d\"HR.TBL_TYPE\" order\u003d\"0\" color-bg\u003d\"255,128,64\" font\u003d\"Segoe UI:9:0\" x\u003d\"219\" y\u003d\"277\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"TBL_BOOK\" fq-name\u003d\"HR.TBL_BOOK\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"219\" y\u003d\"55\"\u003e\u003cpath name\u003d\"HR\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_TYPE\" fq-name\u003d\"HR.TBL_TYPE.FK_TYPE\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}
