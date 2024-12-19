@@ -1,0 +1,249 @@
+day21
+복습 -> DML2 -> 집계함수, GROUP BY, HAVING, CASE -> 조인 -> 서브쿼리
+
+0. 복습
+1) SQL 성격에 따른 종류
+	DDL - CREATE, ALTER, DROP, TRUNCATE
+	DML - SELECT, INSERT, DELETE, UPDATE
+	DCL - GRANT, REVOKE, ROLLBACK(SAVEPOINT)
+	TCL - 원일독지
+
+2) 모델링
+	요구사항 -> 개념모델링 -> 논리모델링 -> 물리모델링 -> 구현	
+	개념모델링 : 현실세계에 존재하는 정보단위인 엔티티(Entitiy)를 사람이 이해할 수 있는 개념 ㅅ게ㅖ의 정보 구조로 추상화하는 단계
+		엔티티 도출 
+	논리모델링 : 개념 세계의 정보 구조를 정보시스템이 이해할 수 있는 형태로 표현한 단계(실질적인 데이터 모델링에 해당)
+		데이터의 속성, 키, 엔티티들의 관계정의
+	물리모델링 : 정보시스템 세계의 논리적 구조를 정보시스템이 처리할 수 있는 형태로 구조화하는 단계로 구조화된 결과는 데이터 스키마로 표현 
+		엔티티들 데이터베이스의 테이블로 구현, 테이블 / 키 / 제약조건 등을 정의
+
+개념적설계         		  논리적설계            		물리적설계
+엔터티(entity)      	  릴레이션(relation)              테이블(table)
+릴레이션(relation)   	  릴레이션(relation)      	     컬럼(column)
+속성(attribute)      	  속성(attribute), 컬럼(column)   행(row)
+주식별자(main identifier)   기본키(primary key)          기본키(primary key)
+외래식별자(foreign identifier)외래키(foreign key)         외래키(foreign key)
+인스턴스(instance)   	  튜플(tuple), 행(row)   
+도메인(domain)      	  도메인(domain)        	     도메인(domain)
+
+
+
+
+
+3) 데이터의 무결성
+	테이터의 정확성, 일관성, 유효성 유지해서 데이터를 결함없이 유지 및 사용
+	
+	개체 무결성	 / 참조무결성 / 도메인 무결성
+
+4) 제약조건
+	PK NULL X, 중복 X
+	FK NULL O, 중복 O(테이블끼리 관계 -> 참조무결성)
+	UK NULL O, 중복 X
+	CK 특정 조건을 만족해야함
+	N/N	NULL X
+	DEFAULT 값이 없을 경우 기본값으로 자동입력될 값
+
+5) 정규화
+- 이상현상 : 데이터베이스 설계가 잘못되어 발생하는 문제
+	
+	삽입	: 새로운 데이터를 삽입하기 위해 불필요한 데이터도 같이 삽입해야하는 문제
+	삭제	: 행을 삭제했을 때 필요한 데이터도 같이 삭제되는 문제
+	갱신	: 중복행 중에서 일부만 변경하여 데이터가 불일치하게 되는 모순의 문제
+	
+- 정규화
+	데이터의 중복을 최소화(독립성), 데이터의 무결성을 향상
+	이상현상을 제거하기 위한 작업
+	
+	1차 정규화 : 모든 컬럼은 고유한 값을 가지고, 모든 행은 고유한 식별자(PK) 를 가진다
+	2차 정규화 : 기본키가 조합키(복합키)인 경우 조합키의 일부분에만 종속되는 속성이 존재하는 경우
+		기본키가 아닌 컬럼에 종속되는 속성이 존재하는 경우(부분함수 종속성 제거)
+	3차 정규화 : 기본키가 아닌 컬럼이 다른 컬럼을 결정하는 이유(이행적 함수 종속성 제거)
+=====================================================
+개념 모델링(엔티티)
+   직원엔티티 직원번호, 이름, 생년월일, 급여, 부서명, 부서주소, 부서우편번호
+   
+논리 모델링(키, 제약조건, 속성 타입)
+2차정규화 수행
+   직원      		부서
+   직원번호	숫자pk   	부서번호      숫자pk
+   이름		문자   	부서주소      문자
+   생년월일   	날짜   	부서우편번호   숫자
+   급여   	숫자   	부서명      문자
+   부서번호  	숫자fk
+
+3차정규화 수행
+   직원      	부서      	부서주소
+   직원번호 pk   부서번호   pk    부서주소번호   pk
+   이름    NN   부서주소번호fk    부서주소      NN   
+   생년월일      부서명      NN  부서우편번호   NN
+   급여    NN         	    
+   부서번호 fk
+
+
+물리 모델링
+   부서주소(TBL_DEPADDR)
+   -------------------------------------
+   DEPADDR_NUMBER NUMBER PRIMARY KEY
+   -------------------------------------
+   DEPADDR_ADDRESS VARCHAR2(100)   NN
+   DEPADDR_CODE   NUMBER(5)   NN
+   DEPADDR_DEPARTMENT VARCHAR2(10)   NN
+
+   부서(TBL_DEPARTMENT)
+   -------------------------------------
+   DEPARTMENT_NUMBER NUMBER PK
+   -------------------------------------
+   DEPADDR_NUMBER NUMBER FK
+
+   직원(TBL_EMP)
+   -------------------------------------
+   EMP_NUMBER NUMBER PRIMARY KEY
+   -------------------------------------
+   EMP_NAME VARCHAR2(100)   NOT NULL
+   EMP_BRITH DATE   
+   EMP_SALARY NUMBER NOT NULL
+   DEPARTMENT_NUMBER NUMBER (FK)
+
+
+   
+-- 직원 테이블 생성 (1차 정규화를 적용하지 않은 형태로 유지)
+CREATE TABLE Employees (
+    EmployeeID NUMBER PRIMARY KEY,
+    Name VARCHAR2(50),
+    BirthDate DATE,
+    DepartmentInfo VARCHAR2(255),
+    Salary NUMBER
+);
+
+-- 데이터 삽입
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (1, '스티븐', TO_DATE('2010-12-31', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 300);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (2, '마리', TO_DATE('2011-10-01', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 250);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (3, '찰스', TO_DATE('2003-05-01', 'YYYY-MM-DD'), '사업부, 경기도...02345', 200);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (4, '마리아', TO_DATE('1995-08-15', 'YYYY-MM-DD'), '인사부, 서울시.. 01234', 280);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (5, '제임스', TO_DATE('1988-03-22', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 320);
+
+INSERT INTO Employees (EmployeeID, Name, BirthDate, DepartmentInfo, Salary)
+VALUES (6, '안나', TO_DATE('2000-12-10', 'YYYY-MM-DD'), '영업부, 서울시.. 01234', 270);
+
+======================================================
+1. DML2
+1) 외래키와 참조 무결성
+	외래키 : 다른 테이블의 기본키를 참조하는 키(컬럼)
+	PK(기본키)를 가진 테이블 : 참조할 테이블(부모테이블)
+	FK(외래키)를 가진 테이블 : 참조하는 테이블(자식테이블)
+	-- 부모 테이블의 기본키를 자식 테이블에서 외래키로 사용하는 것
+	
+	NULL값은 허용되지만 참조하는 테이블에 존재하지 않는 값은 허용되지 않는다
+	(두 테이블에 존재하는 데이터가 동일하게 유지하는 참조 무결성)
+
+
+2) CASECADE 
+	ON DELETE CASCADE : 부모 테이블에서 행(PK)를 삭제할 때 자식 테이블에서도 해당 PK를 참조하고 있는 행이 삭제된다
+		ALTER TABLE 자식테이블 ADD CONSTRAINT FK_테이블명 FOREGIGN KEY(해당테이블의 컬럼명) REFERENCES 부모테이블명(부모테이블의 컬럼명) ON DELETE CASCADE;	
+	Ex) 게시판의 게시글(부모)과 댓글(자식) 관계
+
+	ON UPDATE CASCADE : 부모 테이블의 PK가 변경되면 참조하고 있는 자식 테이블의 FK값도 변경한다(오라클 사용 불가, MySQL 등 사용가능)
+	Ex) 부모 테이블의 PK가 자주 변경될 간으성이 있을 때 유용
+			
+	DROP TABLE 부모테이블 CASCADE CONSTRAINT; 부모테이블을 참조하는 제약조건과 부모 테이블을 같이 삭제할 수 있다
+	- 참조 무결성을 강제로 무시하고 부모 테이블과 자식 테이블 간 관계를 강제로 종료할 때
+	
+2. 집계함수
+
+	그룹화된 데이터를 집계 연산을 통해 하나의 결과로 얻게된다
+	집계함수는 NULL값을 제외하고 진행된다
+	
+	COUNT()		NULL값을 포함한 행의 개수
+	COUNT(컬럼명)	NULL값을 제외한 행의 개수
+	SUM([DISTINCT | ALL]표현식) NULL을 제외한 행의 합계
+	AVG([DISTINCT | ALL]표현식) NULL을 제외한 행의 평균
+	MAX([DISTINCT | ALL]표현식) 최대값(문자, 날짜도 가능)
+	MIN([DISTINCT | ALL]표현식) 최소값(문자, 날짜도 가능)	 
+	STDDEV([DISTINCT | ALL] 표현식) 표준 편차
+	VARIANCE([DISTINCT | ALL] 표현식) 분산
+
+
+- SELECT문 해석 및 작성 순서
+	해석 순서 :FROM -> WHERE -> GROUP BY -> HAVING SELECT -> ORDER BY
+	SLECT -> FROM -> WHERE -> GROUP BY -> HAVING -> ORDER BY
+	SELECT [DISTINCT] 컬럼명 [AS 별칭]
+	FROM 테이블명
+	WHERE 조건식
+	GROUP BY 그룹화 기준 컬럼
+	HAVING 그룹에 대한 조건식
+	ORDER BY 정렬 기준정렬[ASC, DESC];
+
+-- SELECT 절에 업는 컬럼을 ORDER BY 절에서 사용 가능
+-- GROUP BY 절에서 그룹핑 기준을 정의하게 되면, GROUP BY절의 그룹핑 기준에 사용된 사용된 컬럼과 집계함수에 사용될 수 있는 숫자형 데이터 컬럼들의 집합을 새로 만듦
+
+3) GROUP BY, HAVING 절
+	GROUP BY 절은 특정 컬럼에 있는 값을 그룹으로 묶어서 데이터를 집계한다
+	ORDER BY절과 동일하게 SELECT 문에서 사용되며 위치는 WHERE 절 다음, ORDER BY절 이전에 작성한다
+	HAVING 절은 GROUP BY 다음에 사용할 수 있으며, SELECT의 WHERE 절 처럼 GROUP BY의 HAVING 조건을 걸어준다
+	
+	WHERE 절은 쿼리문 전체에 조건을 걸어서 데이터를 가져오며,
+	그 데이터들을 GROUP BY로 묶어주는데 묶은 데이터에 조건이 필요하면 HAVING 절에 작성하면 된다
+	WHERE 절은 집계함수가 불가능하지만 HAVING 절은 가능하다
+	WHERE 절에 우선적으로 처리할 조건식을 작성해야 속도가 빠르다
+
+3. 서브쿼리(SUB QUERY)
+	하나의 쿼리 내에 작성하는 또 다른 쿼리
+	서브쿼리의 위치에 따른 종류
+		- FROM 절 : IN LINE VIEW
+		- SELECT 절 : SCALAR
+		- WHERE 절 : SUB QUERY
+
+1) 인라인 뷰(INLINE VIEW)
+	FROM 절 안에 또 다른 쿼리를 작성한다
+	서브쿼리의 결과를 가상 테이블처럼 사용한다
+
+2) 스칼라 서브쿼리
+	SELECT 절 안에 또 다른 쿼리를 작성한다
+	단일 컬럼, 단일 행을 반환한다(1개의 값으로 사용)
+
+3) 서브쿼리
+	WHERE절 또는 HAVING 절 안에 또 다른 쿼리를 작성한다
+
+연관 서브쿼리
+	서브쿼리가 메인쿼리 컬럼을 가지고 있지 않은 경우
+	메인 쿼리와 독립적으로 실행될 수 있음
+
+	SELECT EMPLOYEE_ID, FIRST_NAME, SALARY
+	FROM EMPLOYEES
+	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES);
+
+
+비연관 서브쿼리
+	서브쿼리가 메인쿼리 컬럼을 가지고 있는 경우
+	메인쿼리의 각 행에 대해 반복 실행됌
+
+단일행 서브쿼리
+	서브쿼리의 결과가 하나의 행만 반환됨
+	사용연산자 : =, <, >, >=, <=, <> 등
+
+다중행 서브쿼리
+	서브쿼리의 결과가 여러 행을 반환함
+	사용연산자 : IN, ALL, ANY, SOME, EXISTS 등
+		
+
+4. ROWNUM
+	결과 행 앞에 1부터 1씩 증가하는 시퀀스를 붙여준다
+	ROWNUM은 컬럼처럼 사용하면 된다
+	*을 다른 컬럼과 함께 조회하게 되면 소속을 명시해줘야한다
+	테이블에 ALIAS를 부여하고 해당 별칭을 *앞에 명시해준다
+
+
+
+
+
+
+

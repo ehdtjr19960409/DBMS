@@ -81,7 +81,7 @@ TBL_BOARD
 	TRUNCATE TABLE 테이블명;
 
 +) TRUNCATE와 DELETE의 차이 (테이블이 아닌 데이터 삭제)
-	DELETE : DML, 테이블의 모든 데이터 삭제, 테이블의 용량은 감소하지 않음, ROLLBACK 가능, WHERE 사용가능
+	DELETE : DML, 테이블의 모든 데이터 삭제, 테이블의 용량은 감소하지 않음, ROLLBACK 가능, WHERE 사용가능 (savepoint로 저장한데로 이동가능)
 	TRUNCATE : DDL, 테이블의 모든 데이터 삭제, 테이블의 용량 초기화, ROLLBACK 불가능, WHERE 사용 불가능
 
 5) 제약조건 정의 방법
