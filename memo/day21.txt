@@ -146,7 +146,7 @@ VALUES (6, '안나', TO_DATE('2000-12-10', 'YYYY-MM-DD'), '영업부, 서울시.
 	(두 테이블에 존재하는 데이터가 동일하게 유지하는 참조 무결성)
 
 
-2) CASECADE 
+2) CASCADE 
 	ON DELETE CASCADE : 부모 테이블에서 행(PK)를 삭제할 때 자식 테이블에서도 해당 PK를 참조하고 있는 행이 삭제된다
 		ALTER TABLE 자식테이블 ADD CONSTRAINT FK_테이블명 FOREGIGN KEY(해당테이블의 컬럼명) REFERENCES 부모테이블명(부모테이블의 컬럼명) ON DELETE CASCADE;	
 	Ex) 게시판의 게시글(부모)과 댓글(자식) 관계
