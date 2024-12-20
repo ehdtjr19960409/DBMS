@@ -1,0 +1,9 @@
+SELECT * FROM user_tab_privs_recd;
+
+--INSERT INTO hr.EMPLOYEES(EMPLOYEE_ID, FIRST_NAME)
+--values(100,'dddd');
+
+CREATE TABLE tbl_member(
+	mem_id NUMBER PRIMARY KEY,
+	mem_name varchar2(100)
+)
