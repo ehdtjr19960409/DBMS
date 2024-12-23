@@ -13,11 +13,23 @@
 		<column name="Grantable" visible="true" order="3" width="100"/>
 		<column name="Hierarchy" visible="true" order="4" width="100"/>
 	</item>
+	<item id="NodeList/OracleSequence">
+		<column name="Sequence Name" visible="true" order="0" width="132"/>
+		<column name="Value" visible="true" order="1" width="100"/>
+		<column name="Min Value" visible="true" order="2" width="100"/>
+		<column name="Max Value" visible="true" order="3" width="209"/>
+		<column name="Increment" visible="true" order="4" width="100"/>
+		<column name="Cache" visible="true" order="5" width="100"/>
+		<column name="Cycle" visible="true" order="6" width="100"/>
+		<column name="Ordered" visible="true" order="7" width="100"/>
+	</item>
 	<item id="NodeList/OracleTable">
-		<column name="Name" visible="true" order="0" width="106"/>
+		<column name="Name" visible="true" order="0" width="100"/>
 		<column name="Partitioned" visible="true" order="1" width="100"/>
-		<column name="Created" visible="true" order="2" width="126"/>
-		<column name="Last Changed" visible="true" order="3" width="126"/>
+		<column name="Created" visible="true" order="2" width="100"/>
+		<column name="Last Changed" visible="true" order="3" width="100"/>
+		<column name="Partition keys" visible="true" order="9" width="100"/>
+		<column name="Subpartition keys" visible="true" order="10" width="107"/>
 		<column name="Stat Row Count" visible="true" order="4" width="100"/>
 		<column name="Tablespace" visible="true" order="5" width="100"/>
 		<column name="Comment" visible="true" order="6" width="100"/>
@@ -51,6 +63,14 @@
 		<column name="On Delete" visible="true" order="5" width="100"/>
 		<column name="Status" visible="true" order="6" width="100"/>
 	</item>
+	<item id="NodeList/OracleTableIndex">
+		<column name="인덱스명" visible="true" order="0" width="100"/>
+		<column name="Column" visible="true" order="1" width="100"/>
+		<column name="테이블" visible="true" order="2" width="100"/>
+		<column name="인덱스 유형" visible="true" order="3" width="100"/>
+		<column name="Unique" visible="true" order="4" width="100"/>
+		<column name="Tablespace" visible="true" order="5" width="100"/>
+	</item>
 	<item id="NodeList/OracleTableIndexColumn">
 		<column name="이름" visible="true" order="0" width="100"/>
 		<column name="Column" visible="true" order="1" width="104"/>
@@ -66,6 +86,12 @@
 		<column name="Column" visible="true" order="5" width="100"/>
 		<column name="Status" visible="true" order="6" width="100"/>
 		<column name="Action Type" visible="true" order="7" width="100"/>
+	</item>
+	<item id="NodeList/OracleView">
+		<column name="View Name" visible="true" order="0" width="100"/>
+		<column name="Created" visible="true" order="1" width="100"/>
+		<column name="Last Changed" visible="true" order="2" width="100"/>
+		<column name="Comment" visible="true" order="3" width="100"/>
 	</item>
 	<item id="SchemaSelector">
 		<column name="Name" visible="true" order="0" width="130"/>
