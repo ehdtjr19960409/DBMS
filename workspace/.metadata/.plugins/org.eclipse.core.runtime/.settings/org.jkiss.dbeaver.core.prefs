@@ -1,7 +1,7 @@
 driver.selector.orderBy=score
 eclipse.preferences.version=1
-project.active=day06
+project.active=jdbc01
 sample.database.canceled=true
 tipOfTheDayInitializer.notFirstRun=true
-ui.auto.update.check.time=1734913388969
+ui.auto.update.check.time=1735888418329
 ui.show.tip.of.the.day.on.startup=true

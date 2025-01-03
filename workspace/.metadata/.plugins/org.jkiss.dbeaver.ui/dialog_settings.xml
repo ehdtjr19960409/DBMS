@@ -4,8 +4,8 @@
 		<item key="folder" value="sql"/>
 	</section>
 	<section name="DBeaver.ActiveWizardDialog.NewConnectionWizard">
-		<item key="DIALOG_X_ORIGIN" value="217"/>
-		<item key="DIALOG_Y_ORIGIN" value="155"/>
+		<item key="DIALOG_X_ORIGIN" value="220"/>
+		<item key="DIALOG_Y_ORIGIN" value="339"/>
 		<item key="DIALOG_WIDTH" value="940"/>
 		<item key="DIALOG_HEIGHT" value="605"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
