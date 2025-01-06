@@ -1,0 +1,35 @@
+CREATE SEQUENCE seq_user2;
+CREATE SEQUENCE seq_book;
+CREATE SEQUENCE seq_rental;
+
+
+CREATE TABLE TBL_USER2(
+   user_number NUMBER,
+   user_id varchar2(100) NOT NULL,
+   user_pw varchar2(100) NOT NULL,
+   user_name varchar2(100) NOT NULL,
+   user_phone NUMBER UNIQUE,
+   CONSTRAINT pk_user2 PRIMARY KEY(user_number)
+);
+
+CREATE TABLE TBL_BOOK(
+   book_number NUMBER,
+   book_title varchar2(100) NOT NULL,
+   book_author varchar2(100) NOT NULL,
+   CONSTRAINT pk_book PRIMARY KEY(book_number)
+);
+
+CREATE TABLE TBL_RENTAL(
+   rental_number NUMBER,
+   user_number NUMBER,
+   book_number NUMBER,
+   rental_date DATE,
+   rental_day NUMBER,
+   CONSTRAINT pk_rental PRIMARY KEY(rental_number),
+   CONSTRAINT fk_user FOREIGN KEY(rental_number) REFERENCES TBL_USER(user_number),
+   CONSTRAINT fk_book FOREIGN KEY(book_number) REFERENCES TBL_BOOK(book_number)
+);
+
+SELECT * FROM TBL_USER2;
+SELECT * FROM TBL_BOOK;
+SELECT * FROM TBL_RENTAL;

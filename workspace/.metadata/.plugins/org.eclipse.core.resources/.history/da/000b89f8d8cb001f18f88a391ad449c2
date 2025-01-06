@@ -50,7 +50,3 @@ SET USER_ID = ?, user_pw = ? , USER_NAME = ?, USER_AGE = ?, USER_AGE = ?, USER_G
 SELECT user_id, user_pw, user_name, user_age, user_gender, user_birth
 FROM tbl_user
 WHERE USER_NUMBER = ?;
-
---회원 탈퇴
-DELETE FROM TBL_USER
-WHERE USER_NUMBER = ? ;

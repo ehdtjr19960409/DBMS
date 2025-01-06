@@ -40,17 +40,4 @@ WHERE USER_ID ='aaa' AND user_pw='1234';
 
 SELECT USER_ID
 FROM TBL_USER 
-WHERE USER_NAME = '신동석' AND USER_BIRTH ='2025-01-03'; 
-
--- 회원 전체정보 수정
-UPDATE tbl_user 
-SET USER_ID = ?, user_pw = ? , USER_NAME = ?, USER_AGE = ?, USER_AGE = ?, USER_GENDER = ?, USER_BIRTH =?;
-
--- 회원 1명의 전체정보 조회
-SELECT user_id, user_pw, user_name, user_age, user_gender, user_birth
-FROM tbl_user
-WHERE USER_NUMBER = ?;
-
---회원 탈퇴
-DELETE FROM TBL_USER
-WHERE USER_NUMBER = ? ;
+WHERE USER_NAME = '' OR USER_BIRTH =''; 
